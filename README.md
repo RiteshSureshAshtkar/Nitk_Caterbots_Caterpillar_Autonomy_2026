@@ -4,7 +4,8 @@
 mkdir -p Caterpillar_ws/src
 cd Caterpillar_ws
 cd src
-git clone git@github.com:RiteshSureshAshtkar/Nitk_Caterbots_Caterpillar_Autonomy_2026.git
+git config --global http.version HTTP/1.1
+git clone https://github.com/RiteshSureshAshtkar/Nitk_Caterbots_Caterpillar_Autonomy_2026.git
 ```
 ## ii)Connect ESP32 first(without plugging in the lidar)
 ### a) Open this whole repository on VS Code and install the PlatformIO platform plugin on VS Code by following [this](https://docs.platformio.org/en/latest/integration/ide/vscode.html)
