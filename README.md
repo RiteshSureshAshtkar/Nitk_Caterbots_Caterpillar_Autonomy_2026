@@ -23,13 +23,34 @@ source install/setup.bash
 ros2 launch blitz blitz.launch.py
 ```
 This should launch up and show
+[blitz_node.py-1] [INFO] [1768130641.357372987] [blitz_node]: [PUB] /encoder_raw
+[blitz_node.py-1] [INFO] [1768130641.358857268] [blitz_node]: [PUB] /rover_limit_sw
+[blitz_node.py-1] [INFO] [1768130641.360230568] [blitz_node]: [PUB] /mode_switch
+[blitz_node.py-1] [INFO] [1768130641.361655590] [blitz_node]: [PUB] /bno
+[blitz_node.py-1] [INFO] [1768130641.365965933] [blitz_node]: [SUB] /velocity
+[blitz_node.py-1] [INFO] [1768130641.367565974] [blitz_node]: [SUB] /actuator_cmd
+[blitz_node.py-1] [INFO] [1768130641.368279883] [blitz_node]: BlitzNode started on /dev/ttyUSB0 @ 115200
 
-### Verify with
+### Verify with below command in new terminal
 ```bash
 ros2 topic list
 ```
 It should show
-If it does not kindly disconnect all usb devices from RPI plug in the ESP32 and try again.If it still does not work please contact me
+/encoder_raw
+/rover_limit_sw
+/mode_switch
+/bno
+/velocity
+/actuator_cmd
+
+## In the same terminal run
+```bash
+ros2 topic echo /bno
+```
+This should show up values if it does not repeat step iv) from start
+
+Make sure you are using a data cable and not a power only cable
+If it does not still work then kindly disconnect all usb devices from RPI plug in only the ESP32 and try again.If it still does not work please contact me
 ## v)Now let us launch the file which will start up the SLAM_Mapping and map_auto_saver node
 ### Open new terminal and copy paste below commands
 ```bash
