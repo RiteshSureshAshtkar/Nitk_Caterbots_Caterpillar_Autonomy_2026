@@ -22,7 +22,9 @@ source install/setup.bash
 ```bash
 ros2 launch blitz blitz.launch.py
 ```
+
 This should launch up and show
+```RESULT
 [blitz_node.py-1] [INFO] [1768130641.357372987] [blitz_node]: [PUB] /encoder_raw
 [blitz_node.py-1] [INFO] [1768130641.358857268] [blitz_node]: [PUB] /rover_limit_sw
 [blitz_node.py-1] [INFO] [1768130641.360230568] [blitz_node]: [PUB] /mode_switch
@@ -30,19 +32,20 @@ This should launch up and show
 [blitz_node.py-1] [INFO] [1768130641.365965933] [blitz_node]: [SUB] /velocity
 [blitz_node.py-1] [INFO] [1768130641.367565974] [blitz_node]: [SUB] /actuator_cmd
 [blitz_node.py-1] [INFO] [1768130641.368279883] [blitz_node]: BlitzNode started on /dev/ttyUSB0 @ 115200
-
+```
 ### Verify with below command in new terminal
 ```bash
 ros2 topic list
 ```
 It should show
+```RESULT
 /encoder_raw
 /rover_limit_sw
 /mode_switch
 /bno
 /velocity
 /actuator_cmd
-
+```
 ## In the same terminal run
 ```bash
 ros2 topic echo /bno
